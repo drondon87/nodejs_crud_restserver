@@ -37,14 +37,15 @@ const obtenerProductoByIdGET = async(req = request, res = response) => {
 
 const crearProductoPOST = async(req = request, res = response) => {
 
-    const productoBD = await Producto.findOne({ nombre });
-    const { estado, usuario, ...body } = req.body;
+    /* const productoBD = await Producto.findOne({ nombre });
 
     if (productoBD) {
         return res.status(400).json({
             msg: `El Producto ${productoBD.nombre} ya existe`
         })
-    }
+    } */
+
+    const { estado, usuario, ...body } = req.body;
 
     // Generar la data a Guardar
     const data = {
